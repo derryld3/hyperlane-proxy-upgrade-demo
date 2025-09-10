@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx hardhat build"
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +27,7 @@
     "@types/node": "^22.8.5",
     "chai": "^5.1.2",
     "ethers": "^6.14.0",
-    "forge-std": "foundry-rs/forge-std#v1.9.4",
+    "forge-std": "^1.1.2",
     "hardhat": "^3.0.4",
     "mocha": "^11.0.0",
     "typescript": "~5.8.0"
