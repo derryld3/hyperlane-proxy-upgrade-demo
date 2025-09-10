@@ -14,5 +14,7 @@ contract HypERC20_V2 is HypERC20 {
     ) HypERC20(_decimals, _scale, _mailbox) {
     }
 
-    // TODO identify which function to override, the goal is sender must be whitelisted
+    // TODO implement addWhitelist function
+
+    // TODO identify which transfer function to override, the goal is sender must be whitelisted
 }
