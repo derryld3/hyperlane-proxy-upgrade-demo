@@ -1,4 +1,6 @@
+require("@nomicfoundation/hardhat-ethers");
 require("@openzeppelin/hardhat-upgrades");
+require("@nomicfoundation/hardhat-verify");
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -19,6 +21,21 @@ const config = {
       url: `https://rpc.testnet.pruv.network/`,
       accounts: [PRIVATE_KEY]
     },
+  },
+  etherscan: {
+    apiKey: {
+      'seaseed': 'empty'
+    },
+    customChains: [
+      {
+        network: "seaseed",
+        chainId: 7336,
+        urls: {
+          apiURL: "https://explorer.testnet.pruv.network/api",
+          browserURL: "https://explorer.testnet.pruv.network"
+        }
+      }
+    ]
   },
 };
 
