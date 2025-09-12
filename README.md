@@ -83,3 +83,32 @@ Execute the upgrade script to upgrade your proxy contract:
 ```bash
 yarn upgrade:sepolia
 ```
+
+## Successful Upgrade Proof (Example)
+
+This section demonstrates a complete upgrade workflow with transaction evidence:
+
+1. **Initial Token Creation** (using Hyperlane CLI)  
+   Token symbol: FREE  
+   [Transaction](https://sepolia.etherscan.io/tx/0x253067a3f5fcc2c7c1171bef075b94987566d17dabeef53390d8c6fb3ff07026)
+
+2. **Add 10 FREE tokens to Account A and B:**
+   - [Account A](https://sepolia.etherscan.io/tx/0x9e1e446edf2f7eb6c3c03ba1ab3329725ddfdcbe93d9cd0bd15d4ec62d3cc9ce)
+   - [Account B](https://sepolia.etherscan.io/tx/0xa852865891a2c259a3076c756c8f3910b1db2c7f8dc35c3c0f11ee2ecc0f18cb)
+
+3. **Transfer 5 FREE from Account A to Account B:**  
+   [Transaction](https://sepolia.etherscan.io/tx/0xdb934b3d37e0f9996b87675714949554f123af62fcb6b1f68b4e59a84c306a3f)
+
+4. **Upgrade Proxy - Whitelist Feature Implemented**  
+   [Transaction](https://sepolia.etherscan.io/tx/0xfb91c15284ae96c2f7f8bf8659932960987b3632d755eabb4e249bb5f6f44df0)  
+   After this upgrade, only whitelisted accounts can transfer tokens.
+
+5. **Add Account B to Whitelist**  
+   [Transaction](https://sepolia.etherscan.io/tx/0x666639790183808cfcd8919762948d22bb8ce397b2412d8cdc3a04a35ced910c)
+
+6. **Successful Transfer from Whitelisted Address** (Account B to Account A)  
+   [Transaction](https://sepolia.etherscan.io/tx/0xf4f52294659b77b7d449d7234ee9ecc5773abdc313c4236c434e905a4a817079)
+
+7. **Failed Transfer from Non-Whitelisted Address** (Account A to Account B)  
+   [Transaction](https://sepolia.etherscan.io/tx/0xc6a1960002c07f01ae0a7b34796be697711498cf012262275d253b4a7e885edc)  
+   This transaction failed with `NOT_WHITELISTED` error, proving the whitelist functionality works correctly.
